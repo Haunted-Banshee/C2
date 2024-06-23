@@ -17,7 +17,7 @@ Screenshare:
 - Screenshare support
 
 ## Compilation
-Designed to compile with the Tiny C Compiler. Compile agent with `tcc client/main.c -lws2_32 -lwininet -m64 -luser32`, sample BOF with `tcc bof/dlldemo.c -shared -o dlldemo.dll -m64`, run server with `python3 server/server.py`
+Designed to compile with the Tiny C Compiler. Compile agent with `tcc client/main.c -lws2_32 -lwininet -m64 -luser32  -lgdi32 -lole32`, sample BOF with `tcc bof/dlldemo.c -shared -o dlldemo.dll -m64`, run server with `python3 server/server.py`
 
 ## Scripting
 Sample script:
@@ -33,6 +33,7 @@ msgbox "title" "data \"big data\""
 exec "dir"
 sleep 3000
 exec "whoami"
+vnc 127.0.0.1 1235
 swap_c2 socks 127.0.0.1 6968 1000
 ```
 
